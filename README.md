@@ -1,2 +1,3 @@
-# SeguridadApiNetCore
-Web Api Net Core
+# SegApiCore
+
+NET Core 3

@@ -1,0 +1,11 @@
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install-Package Microsoft.EntityFrameworkCore.Design
+
+PM> Install-Package EntityFramework -pre
+
+
+
+Generar Contexto en el proyecto de repository (ver https://stackoverflow.com/questions/46572306/ef-core-2-0-scaffold-dbcontext-find-connectionstring-in-another-project)
+Scaffold-DbContext -Connection "Server=(localdb)\ProjectsV13;Database=MyDbName;Trusted_Connection=True;" -Provider Microsoft.EntityFrameworkCore.SqlServer -OutputDir Model -Context "MyDbContextName" -DataAnnotations -Force -Project MyEntitiesProject -StartupProject MyEntitiesProject
+Scaffold-DbContext "Server=Tango02\Tango02;Database=Seguridad;user=sa;password=Tango@02;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DataContext -Context "SeguridadEntities" -DataAnnotations -Force -Project SEG.Repositories -StartupProject SEG.Repositories
