@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>SEG.Api</AssemblyName>
     <UserSecretsId>2c7ef40a-1933-4ddb-beca-66d3ef144327</UserSecretsId>
   </PropertyGroup>
