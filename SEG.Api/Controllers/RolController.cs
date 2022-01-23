@@ -181,12 +181,15 @@ namespace SEG.API.Controllers
            // HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, rolResp);
             return Ok(rolResp);
         }
+
+
+
         /// <summary>
         /// Recupera todos los permisos de un rol
         /// </summary>
         /// <param name="rolId"></param>
         /// <returns></returns>
-      
+
         [HttpGet]        
         [Route("RolPermission")]
         public List<Permissions> RolPermission(int rolId)

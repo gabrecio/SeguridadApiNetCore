@@ -60,13 +60,14 @@ namespace SEG.LocalViewModels
         #endregion Propiedades  - Get/Set
 
     }
+
     public class UserLoginViewModel
     {
         #region Propiedades      
-      
+
         public string username { get; set; }
-        public string password { get; set; }        
-      
+        public string password { get; set; }
+
 
         #endregion Propiedades  - Get/Set
 

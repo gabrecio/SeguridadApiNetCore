@@ -95,6 +95,19 @@ namespace SEG.API.Controllers
             return Ok(respuesta);
         }
 
+        [HttpGet]
+        [Route("GetListaAgil2")]
+        public IActionResult GetListaAgil2()
+        {
+            //   log.Info("GET /api/CentroCosto/GetListaAgil");
+            /*var respuesta = new GenericListResponse();
+            var total = 0;
+            respuesta.Lista = _CentroCostoService.GetListaAgil().ToList();
+            respuesta.Total = total;*/
+            // HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, respuesta);
+            return Ok(_CentroCostoService.GetListaAgil().ToList());
+        }
+
         [AllowAnonymous]
         [HttpGet]
         [Route("LimpiarCacheCentroCosto")]
