@@ -245,6 +245,35 @@ namespace SEG.API.Controllers
 
         }
 
+        [AllowAnonymous]
+        [HttpPost]        
+        [Route("Signin")]
+        public IActionResult Signin(UserLoginViewModel usuario)
+        {            
+            // HttpResponseMessage response;
+            //hacer el check de usuario y pass
+            var user = _usuarioService.checkUser(usuario.username, usuario.password, "NTPD");
+
+            if (user != null)
+            {
+                if (!_usuarioService.checkUserApp(user.id, "NTPD"))
+                {                 
+                    // response = Request.CreateResponse(HttpStatusCode.Unauthorized, 0);
+                    return Unauthorized(0);
+                }
+                //response = Request.CreateResponse(HttpStatusCode.OK, user);
+                return Ok(user);
+            }
+            else
+            {
+                //log.Error("ERROR GET api /  usuario:  Status 401:" + "El usuario o la contraseña no son validos.");
+                //response = Request.CreateResponse(HttpStatusCode.Unauthorized, 0);
+                return Unauthorized(0);
+            }
+
+        }
+
+
         /// <summary>
         /// Recupera la lista de permisos para un usuari en una apicación
         /// </summary>
@@ -259,7 +288,6 @@ namespace SEG.API.Controllers
 
             try
             {
-
                 var listaPermiso = _usuarioService.GetUserPermission(userId, codeApp);
                 if (listaPermiso != null)
                     return listaPermiso;
@@ -268,7 +296,6 @@ namespace SEG.API.Controllers
             catch (Exception e)
             {
                 return null;
-
             }
         }
 
